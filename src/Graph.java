@@ -53,7 +53,7 @@ public class Graph<T> {
         StringBuilder sb = new StringBuilder();
         sb.append("Graph{\n");
         for (T node : adjacencyList.keySet()) {
-            sb.append(node + " -> " + adjacencyList.get(node) + "\n");
+            sb.append(node).append(" -> ").append(adjacencyList.get(node)).append("\n");
         }
         sb.append("}");
         return sb.toString();
