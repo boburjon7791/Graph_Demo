@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Graph<T> {
     // Har bir tugun uchun bog'liq tugunlar ro'yxatini saqlaydigan xarita
-    private Map<T, List<T>> adjacencyList;
+    private final Map<T, List<T>> adjacencyList;
 
     public Graph() {
         // Xaritani HashMap sifatida boshlang'ichlashtirish
