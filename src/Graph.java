@@ -28,14 +28,14 @@ public class Graph<T> {
         // node1 va node2 orasidagi yo'lni ikkala tomondan qo'shish
         // Faraz qilingki, ikkala tugun ham grafda mavjud
         if (!adjacencyList.containsKey(node1)) {
-            throw new RuntimeException("node1 not exist");
+            throw new RuntimeException(node1+" not exist");
         }
 
         if (!adjacencyList.containsKey(node2)) {
             this.addNode(node2);
         }
         if (adjacencyList.get(node1).contains(node2)) {
-            throw new RuntimeException("node2 already exist");
+            throw new RuntimeException(node2 +" already exist");
         }
         adjacencyList.get(node1).add(node2);
         adjacencyList.get(node2).add(node1);
@@ -43,7 +43,7 @@ public class Graph<T> {
 
     public boolean isAdjacent(T node1, T node2) {
         if (node1==null || node2==null) {
-            throw new NullPointerException();
+            throw new NullPointerException("node1 = "+node1+", "+"node2 = "+node2);
         }
         // node2 ning node1 ning bog'liq tugunlari ro'yxatida bo'lishini tekshirish
         // Faraz qilingki, ikkala tugun ham grafda mavjud
@@ -52,10 +52,10 @@ public class Graph<T> {
 
     public int search(T node1, T node2){
         if (!this.adjacencyList.containsKey(node1)) {
-            throw new IllegalArgumentException("node 1 is not exist");
+            throw new IllegalArgumentException(node1 +" is not exist");
         }
         if (!this.adjacencyList.containsKey(node2)) {
-            throw new IllegalArgumentException("node 1 is not exist");
+            throw new IllegalArgumentException(node1 +" is not exist");
         }
         this.queue.add(node1);
         this.queue.addAll(this.adjacencyList.get(node1));
@@ -67,8 +67,8 @@ public class Graph<T> {
                 return i;
             }else {
                 this.queue.addAll(this.adjacencyList.keySet());
+                i++;
             }
-            i++;
             this.queue.removeAll(this.checked);
         }
         return i;
