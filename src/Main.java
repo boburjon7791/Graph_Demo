@@ -16,6 +16,6 @@ public class Main {
 //        System.out.println(stringGraph);
         System.out.println("stringGraph = " + stringGraph);
 //        System.out.println("stringGraph.search(\"hp\", \"a\") = " + stringGraph.search("hp", "a"));
-        System.out.println("stringGraph.search(\"hp\", \"Ali\") = " + stringGraph.search("hp", "Ali"));
+        System.out.println("stringGraph.search(\"hp\", \"Ali\") = " + stringGraph.search("hp", "null"));
     }
 }
