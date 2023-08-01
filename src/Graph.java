@@ -10,6 +10,9 @@ public class Graph<T> {
     }
 
     public void addNode(T node) {
+        if (node==null) {
+            throw new NullPointerException();
+        }
         // Agar xaritada tugun mavjud bo'lmasa, uni xaritaga qo'shish
         if (!adjacencyList.containsKey(node)) {
             adjacencyList.put(node, new ArrayList<>());
@@ -17,6 +20,9 @@ public class Graph<T> {
     }
 
     public void addEdge(T node1, T node2) {
+        if (node1==null || node2==null) {
+            throw new NullPointerException();
+        }
         // node1 va node2 orasidagi yo'lni ikkala tomondan qo'shish
         // Faraz qilingki, ikkala tugun ham grafda mavjud
         if (!adjacencyList.containsKey(node1)) {
@@ -33,6 +39,9 @@ public class Graph<T> {
     }
 
     public boolean isAdjacent(T node1, T node2) {
+        if (node1==null || node2==null) {
+            throw new NullPointerException();
+        }
         // node2 ning node1 ning bog'liq tugunlari ro'yxatida bo'lishini tekshirish
         // Faraz qilingki, ikkala tugun ham grafda mavjud
         return adjacencyList.get(node1).contains(node2);
